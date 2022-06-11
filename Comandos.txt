@@ -1,0 +1,3 @@
+Instalar o TypeScript na versão de desenvolvimento
+npm install typescript@4.2.2 --save-dev
+

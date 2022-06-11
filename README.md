@@ -1,1 +1,1 @@
-Curso de TypeScript - Alura
+Curso de TypeScript utilizando a versão 4.2.2 - Alura
