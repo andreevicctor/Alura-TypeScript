@@ -1,3 +1,2 @@
 Instalar o TypeScript na versão 4.2.2 e no modo desenvolvimento
     npm install typescript@4.2.2 --save-dev
-

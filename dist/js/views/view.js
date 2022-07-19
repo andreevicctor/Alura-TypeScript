@@ -1,3 +1,4 @@
+// classe abstrata pois eu não vou precisar criar instância da classe View
 export class View {
     constructor(seletor) {
         this.elemento = document.querySelector(seletor);
