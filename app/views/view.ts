@@ -2,13 +2,20 @@
 export abstract class View<T> {
     // elemento é protected para eu poder acessa-lo nas classes filhas(as que extendem View)
     protected elemento: HTMLElement;
-
-    constructor(seletor: string) {
+    private escapar = false;
+    // '?' Parâmetros opcionais devem ser sempre os últimos parâmetros.
+    constructor(seletor: string, escapar?: boolean) {
         this.elemento = document.querySelector(seletor);
+        if (escapar) {
+            this.escapar = escapar;
+        }
     }
 
     public update(model: T): void {
-        const template = this.template(model);
+        let template = this.template(model);
+        if (this.escapar) {
+            template = template.replace(/<script>\s\S*?<\/script>/, '');
+        }
         this.elemento.innerHTML = template;
     }
     // template é uma função protected para permitir que ela seja chamada nela mesma ou nas filhas
