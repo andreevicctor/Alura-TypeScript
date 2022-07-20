@@ -1,6 +1,6 @@
 export class Negociacao {
     constructor(_data, 
-    // definindo a propriedade como 'public readonly' torna a propriedade de somente leitura, após a criação
+    // definindo a propriedade como 'public readonly' torna a propriedade de somente leitura não pode ser modificada
     quantidade, valor) {
         this._data = _data;
         this.quantidade = quantidade;

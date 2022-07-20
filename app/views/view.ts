@@ -7,11 +7,12 @@ export abstract class View<T> {
         this.elemento = document.querySelector(seletor);
     }
 
-    update(model: T): void {
+    public update(model: T): void {
         const template = this.template(model);
         this.elemento.innerHTML = template;
     }
+    // template é uma função protected para permitir que ela seja chamada nela mesma ou nas filhas
     // template é uma função abstrata pois eu tenho que implementa-la nas classes filhas(as que extendem View)
-    abstract template(model: T): string;
+    protected abstract template(model: T): string;
 
 }

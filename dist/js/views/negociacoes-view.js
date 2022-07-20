@@ -14,7 +14,7 @@ export class NegociacoesView extends View {
                 ${model.lista().map(negociacao => {
             return `
                         <tr>
-                            <td>${new Intl.DateTimeFormat().format(negociacao.data)}</td>
+                            <td>${this.formata_data(negociacao.data)}</td>
                             <td>${negociacao.quantidade}</td>
                             <td>${negociacao.valor}</td>
                         </tr>
@@ -23,5 +23,9 @@ export class NegociacoesView extends View {
             </tbody>
         </table>
         `;
+    }
+    // função privada que só pode ser utilizada na classe pai
+    formata_data(data) {
+        return new Intl.DateTimeFormat().format(data);
     }
 }
