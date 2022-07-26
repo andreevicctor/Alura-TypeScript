@@ -13,9 +13,9 @@ export class NegociacaoController {
     private mensagemView = new MensagemView('#mensagemView');
 
     constructor() {
-        this.inputData = document.querySelector("#data");
-        this.inputQuantidade = document.querySelector("#quantidade");
-        this.inputValor = document.querySelector("#valor");
+        this.inputData = <HTMLInputElement>document.querySelector("#data");
+        this.inputQuantidade = document.querySelector("#quantidade") as HTMLInputElement;
+        this.inputValor = document.querySelector("#valor") as HTMLInputElement;
         this.negociacoesView.update(this.negociacoes);
     }
 
@@ -37,14 +37,6 @@ export class NegociacaoController {
     private ehDiaUtil(data: Date) {
         return data.getDay() > DiasDaSemana.DOMINGO && data.getDay() < DiasDaSemana.SABADO;
     }
-
-    // private criaNegociacao(): Negociacao {
-    //     const exp = /-/g;
-    //     const data = new Date(this.inputData.value.replace(exp, ','));
-    //     const quantidade = parseInt(this.inputQuantidade.value);
-    //     const valor = parseFloat(this.inputValor.value);
-    //     return new Negociacao(data, quantidade, valor);
-    // }
 
     private atualizaView(): void {
         this.negociacoesView.update(this.negociacoes);

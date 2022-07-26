@@ -1,9 +1,13 @@
-// classe abstrata pois eu não vou precisar criar instância da classe View
 export class View {
-    // '?' Parâmetros opcionais devem ser sempre os últimos parâmetros.
     constructor(seletor, escapar) {
         this.escapar = false;
-        this.elemento = document.querySelector(seletor);
+        const elemento = document.querySelector(seletor);
+        if (elemento) {
+            this.elemento = elemento;
+        }
+        else {
+            throw Error(`O seletor ${seletor} não existe no DOM.`);
+        }
         if (escapar) {
             this.escapar = escapar;
         }

@@ -1,4 +1,3 @@
-// a enum é apenas leitura por padrão e pode ser utilizada em qualquer lugar da aplicação
 export var DiasDaSemana;
 (function (DiasDaSemana) {
     DiasDaSemana[DiasDaSemana["DOMINGO"] = 0] = "DOMINGO";

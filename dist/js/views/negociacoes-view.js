@@ -24,7 +24,6 @@ export class NegociacoesView extends View {
         </table>
         `;
     }
-    // função privada que só pode ser utilizada na classe pai
     formata_data(data) {
         return new Intl.DateTimeFormat().format(data);
     }
